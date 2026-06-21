@@ -58,6 +58,11 @@ jobs:
       #     /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m pip download --platform macosx_10_9_universal2 --only-binary=:all: charset-normalizer
       #     /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m pip install charset_normalizer-*-macosx_10_9_universal2.whl
 
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install packaging
+
       - name: Prepare Assets (--prepare-assets)
         run: >
           /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 Build-Project.command
